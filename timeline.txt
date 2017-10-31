@@ -1,0 +1,127 @@
+TIMELINE FEATURE
+
+If you don't want to reinstall the entire page theme because you already added
+all your info you can copy/paste it seperately into the theme and each character
+tab respectively.
+
+To do this you need to first add the CSS to the theme and then the html to each
+chraacter tab. Explainations below.
+
+You do this at your own risk. I will not provide help for everyone indivisually
+so proceed with care. If you do think you found a bug or there seems to be code
+missing, let me know!
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+CSS
+Add this somewhere in the CSS (between the <style type="text/css"></style> tag)
+
+--------------------------------------------------------------------------------
+
+/*TIMELINE*/
+
+.timeline {
+   position: relative;
+   width: 100%;
+   height: 200px;
+   overflow-x: hidden;
+   padding: 0;
+   margin: 50px 0px 0px 0px;
+}
+.line {
+   position: absolute;
+   height: 5px;
+   width: 100%;
+   margin: 55px 0px 0px 0px;
+   background-image: rgb(236,237,236);
+   background-image: -webkit-linear-gradient(left, transparent 0%, rgb(236,237,236) 10%, rgb(236,237,236) 90%, transparent 100%);
+   background-image: -moz-linear-gradient(left, transparent 0%, rgb(236,237,236) 10%, rgb(236,237,236) 90%, transparent 100%);
+   background-image: -o-linear-gradient(transparent 0%, rgb(236,237,236) 10%, rgb(236,237,236) 90%, transparent 100%);
+   background-image: linear-gradient(to right, transparent 0%, rgb(236,237,236) 10%, rgb(236,237,236) 90%, transparent 100%);
+}
+.titem {
+   position: relative;
+   list-style: none;
+   margin: 0px;
+   padding: 0px 10px;
+   display: inline-block;
+   vertical-align: top;
+   font-size: 12px;
+   /* changes width of event item, set as max-width
+   if you want it to be dynamic */
+   width: 100px;
+}
+.titem li:first-child {
+   margin: 0px;
+}
+.titem li {
+   margin: 20px 0px 0px 0px;
+   padding: 0px 5px;
+   text-align: center;
+}
+.titem li span:nth-child(odd) {
+   font-size: 10px;
+   letter-spacing: 0.5px;
+   padding: 5px 5px;
+   display: inline-block;
+   border-radius: 5px;
+   background-color: #f8f8f8;
+   font-family: helvetica;
+   text-transform: uppercase;
+}
+.titem .fa {
+   font-size: 20px;
+   margin: 0 auto;
+   height: 20px;
+   width: 20px;
+   padding: 2px;
+   color: #f8f8f8;
+   line-height: 100%;
+   border-radius: 100px;
+   border: 4px solid #ecedec;
+}
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+HTML
+Add this within the character tab. Between:
+</div>
+<!--ccontent-->
+
+HERE
+
+</div>
+<!--ccard-->
+
+--------------------------------------------------------------------------------
+
+<div class="timeline">
+  <div class="line"></div>
+
+  <ul class="titem">
+    <li><span>DATE</span></li>
+    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+    <li><span>EVENT</span></li>
+  </ul>
+
+  <ul class="titem">
+    <li><span>DATE</span></li>
+    <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+    <li><span>EVENT</span></li>
+  </ul>
+
+  <ul class="titem">
+    <li><span>DATE</span></li>
+    <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+    <li><span>EVENT</span></li>
+  </ul>
+
+</div>
+<!--timeline-->
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
