@@ -398,6 +398,10 @@
       text-decoration: none;
     }
 
+    .clinks a[aria-disabled] {
+        color: #a5a5a5;
+    }
+
     /*INFO*/
 
     .cell1,
@@ -743,6 +747,12 @@
       color: #fff;
     }
 
+    .clinks a[aria-disabled]:hover {
+        background: #dbdbdb;
+        color: #a5a5a5;
+        cursor: default;
+    }
+
     .flavorimg:hover {
       -webkit-filter: grayscale(0%);
       filter: grayscale(0%);
@@ -932,7 +942,10 @@
                 You can find more icons here: http://fontawesome.io/icons/
                 Depending on how long your character's name is you may have
                 to remove some links or adjust the width for the .clinks
-                class-->
+                class
+                Links that are currently not active or relevant, you can
+                disable by putting aria-disabled="true" within the link tag
+                -->
                 <a href="#">
                     <i class="fa fa-hashtag" aria-hidden="true"></i></a>
                 <a href="#">
