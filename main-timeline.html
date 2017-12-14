@@ -42,8 +42,8 @@
       --g2: #f7136f;
       --g22: #f7136f;
       /*GROUP 3*/
-      --g3: #ff9600;
-      --g32: #ff9600;
+      --g3: #f50304;
+      --g32: #3e1d44;
       /*GROUP 4*/
       --g4: #247677;
       --g42: #247677;
@@ -342,7 +342,7 @@
 
     .biocontent {
       position: relative;
-      height: 290px;
+      height: auto;
       font-size: 14px;
       text-align: justify;
       line-height: 145%;
@@ -356,19 +356,18 @@
       background: rgb(236, 237, 236);
       padding: 0px 10px;
       height: 130px;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     .biotxt {
       background: rgb(236, 237, 236);
       margin: 10px 0px 0px;
-      padding: 5px 15px 0px;
-      height: 155px;
+      padding: 0px 10px 0px;
+      height: 160px;
       overflow-y: auto;
       overflow-x: hidden;
       font-size: 12px;
-      line-height: 145%;
+      line-height: 150%;
       border-bottom: 5px solid rgb(236, 237, 236);
       border-top: 5px solid rgb(236, 237, 236);
     }
@@ -396,10 +395,6 @@
       color: #7a7a7a;
       background: #dbdbdb;
       text-decoration: none;
-    }
-
-    .clinks a[aria-disabled] {
-        color: #a5a5a5;
     }
 
     /*INFO*/
@@ -810,12 +805,6 @@
       color: #fff;
     }
 
-    .clinks a[aria-disabled]:hover {
-        background: #dbdbdb;
-        color: #a5a5a5;
-        cursor: default;
-    }
-
     .flavorimg:hover {
       -webkit-filter: grayscale(0%);
       filter: grayscale(0%);
@@ -933,8 +922,7 @@
 
       <!--DESCRIPTION-->
       <article id="desctxt">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et <b>dolore magna</b> aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <b>!!IMPORTANT!!</b> This preview was updated to show the newly added timeline feature. You can find details as well as the code here. Both versions continue to exist seperately in case you do not want this feature.
       </article>
 
     </header>
@@ -1005,10 +993,7 @@
                 You can find more icons here: http://fontawesome.io/icons/
                 Depending on how long your character's name is you may have
                 to remove some links or adjust the width for the .clinks
-                class
-                Links that are currently not active or relevant, you can
-                disable by putting aria-disabled="true" within the link tag
-                -->
+                class-->
                 <a href="#">
                     <i class="fa fa-hashtag" aria-hidden="true"></i></a>
                 <a href="#">
@@ -1276,7 +1261,7 @@
 
           <!--CHARACTER IMAGE-->
           <div class="flavorimg" style="background-image:
-              url('https://placehold.it/200x365');">
+              url('https://i.imgur.com/uEfdGEk.png');">
           </div>
 
         </div>
