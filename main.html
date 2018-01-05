@@ -20,7 +20,8 @@
 
   <!--JQUERY-->
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-
+  <!--ISOTOPE PLUGIN https://isotope.metafizzy.co/ (for filtering)-->
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
 
   <style type="text/css">
     /*SET GROUP COLORS*/
@@ -188,6 +189,36 @@
 
     article#desctxt b {
       text-transform: uppercase;
+    }
+
+    /*FILER NAV*/
+
+    #filternav {
+      position: relative;
+      width: auto;
+      height: auto;
+      text-align: center;
+    }
+
+    #filternav ul {
+      padding: 0;
+      margin: 10px 10px 0px 10px;
+    }
+
+    .filtercat {
+      position: relative;
+      height: 10px;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+      padding: 5px 5px;
+      display: inline-block;
+      margin: 5px 5px;
+      border-radius: 5px;
+      color: #000;
+      font-family: helvetica;
+      text-transform: uppercase;
+      font-family: courier;
+      cursor: pointer;
     }
 
     /*CHARACTER NAV*/
@@ -873,6 +904,14 @@
         ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </article>
 
+      <article id="filternav">
+        <ul>
+          <li class="filtercat" data-filter="*">all</li>
+          <li class="filtercat" data-filter=".open">open</li>
+          <li class="filtercat" data-filter=".closed">closed</li>
+        </ul>
+      </article>
+
     </header>
 
     <footer>
@@ -886,8 +925,8 @@
           read more here: https://isotope.metafizzy.co/filtering.html-->
 
         <div class="square active" href="#c1">one</div>
-        <div class="square" href="#c2">two</div>
-        <div class="square" href="#c3">three</div>
+        <div class="square open" href="#c2">two</div>
+        <div class="square open" href="#c3">three</div>
         <div class="square" href="#c4">four</div>
         <div class="square" href="#c5">five</div>
         <div class="square" href="#c6">six</div>
@@ -1777,6 +1816,46 @@
         $('header').addClass(groupClass);
 
       });
+
+       /*ISOTOPE*/
+        /*NO LAYOUT*/
+        Isotope.Item.prototype._create = function() {
+            // assign id, used for original-order sorting
+            this.id = this.layout.itemGUID++;
+            // transition objects
+            this._transn = {
+                ingProperties: {},
+                clean: {},
+                onEnd: {}
+            };
+            this.sortData = {};
+        };
+
+        Isotope.prototype.arrange = function(opts) {
+            // set any options pass
+            this.option(opts);
+            this._getIsInstant();
+            // just filter
+            this.filteredItems = this._filter(this.items);
+            // flag for initalized
+            this._isLayoutInited = true;
+        };
+
+        /*FILTER*/
+        var $grid = $('#legend').isotope({
+            stagger: 30,
+            layoutMode: 'none'
+        });
+
+        $('.filtercat').on('click', function() {
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({
+                filter: filterValue
+            });
+
+            e.preventDefault();
+        });
+
 
       /*FIX LEGEND ON SCROLL*/
 
