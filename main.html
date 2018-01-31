@@ -375,26 +375,25 @@
     /*GRID LINKS*/
 
     .clinks {
-      display: grid;
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      height: 30px;
-      padding: 5px;
-      width: 230px;
-      grid-template-rows: repeat(1, 1fr);
-      grid-template-columns: repeat(6, 1fr);
-      grid-gap: 2px;
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 230px;
+        height: 30px;
+        padding: 5px;
     }
-
+    
     .clinks a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 15px;
-      color: #7a7a7a;
-      background: #dbdbdb;
-      text-decoration: none;
+        font-size: 15px;
+        color: #7a7a7a;
+        background: #dbdbdb;
+        text-decoration: none;
+        width: 40px;
+        margin: 0px 1px;
+        line-height: 30px;
+        text-align: center;
     }
 
     .clinks a[aria-disabled] {
