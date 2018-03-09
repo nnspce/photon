@@ -916,12 +916,25 @@
     <footer>
       <div id="legend">
 
-        <!--GROUP LEGEND-->
-        <!--The 'g#' in the 'square' class sets the color for the group
-          (see variables at the top of CSS).
-          The data-filter is for sorting on click. You can add several
-          groups to a link: group AND group, group OR group etc. You can
-          read more here: https://isotope.metafizzy.co/filtering.html-->
+        <!-- The href attribute in the .square div is what links
+        (#c1 etc.) links to the corresponding div id
+        (e.g. 'div id="#c1"). You can rename this to match the
+        characters name if you also change the div id in the
+        character card.
+
+        You can link to these tabs using the URL
+        (http://YOURURL.com/YOURPAGE/#TABNAME)
+
+        For example:
+
+        Your character's name is Musterman.
+        <div class="square" href="#MUSTERMAN">
+        take note to not leave out the hashtag(#)
+
+        In the ccard:
+            <div class="ccard" id="MUSTERMAN">
+            note: there's no #
+        -->
 
         <div class="square active" href="#c1">one</div>
         <div class="square open" href="#c2">two</div>
@@ -933,35 +946,11 @@
         <div class="square" href="#c8">eight</div>
         <div class="square" href="#c9">nine</div>
         <div class="square" href="#c10">ten</div>
-        <!--ADDITIONAL GROUPS
-          <div class="square g6" data-filter=".g6">group</div>
-          <div class="square g7" data-filter=".g7">group</div>
-          <div class="square g8" data-filter=".g8">group</div>
-          <div class="square g9" data-filter=".g9">group</div>
-          <div class="square g10" data-filter=".g10">group</div>-->
+
 
       </div>
       <!--legend-->
     </footer>
-
-    <!--TABS & TAB LINKS-->
-    <!--The href attribute in the .square div is what links you to the
-      corresponding ccard (content card).
-      You can link to these tabs using the URL
-      (http://YOURURL.com/YOURPAGE/#TABNAME) so if you want to change them
-      to the character name you need to edit the square href and give the
-      right ccard div the same id.
-
-      For example:
-
-      Your character's name is Musterman.
-
-      In the cbox:
-          <div class="cbox g1" href="#MUSTERMAN">
-          take note to not leave out the hashtag(#)
-      In the ccard:
-          <div class="ccard" id="MUSTERMAN">
-
 
       <!--CHARACTER CARDS-->
     <section id="gallery">
